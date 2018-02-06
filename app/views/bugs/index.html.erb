@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Bugs</h1>
+<h1>Lista de bugs</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Descricao</th>
+      <th>Descrição</th>
       <th>Solucionado</th>
-      <th>Solucao</th>
+      <th>Solução</th>
       <th>Projeto</th>
       <th colspan="3"></th>
     </tr>
@@ -19,10 +19,10 @@
         <td><%= bug.descricao %></td>
         <td><%= bug.solucionado %></td>
         <td><%= bug.solucao %></td>
-        <td><%= bug.projeto %></td>
-        <td><%= link_to 'Show', bug %></td>
-        <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
-        <td><%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= bug.projeto.nome %></td>
+        <td><%= link_to 'Mostrar', bug %></td>
+        <td><%= link_to 'Solucionar', edit_bug_path(bug) %></td>
+        <td><%= link_to 'Deletar', bug, method: :delete, data: { confirm: 'Deseja deletar?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Bug', new_bug_path %>
+<%= link_to 'Adicionar bug', new_bug_path %>

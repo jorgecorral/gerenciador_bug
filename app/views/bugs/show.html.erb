@@ -17,8 +17,8 @@
 
 <p>
   <strong>Projeto:</strong>
-  <%= @bug.projeto %>
+  <%= @bug.projeto.nome %>
 </p>
 
-<%= link_to 'Edit', edit_bug_path(@bug) %> |
-<%= link_to 'Back', bugs_path %>
+<%= link_to 'Solucionar', edit_bug_path(@bug) %> |
+<%= link_to 'Voltar', bugs_path %>
