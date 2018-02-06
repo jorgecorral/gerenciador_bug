@@ -1,0 +1,37 @@
+<%= form_with(model: bug, local: true) do |form| %>
+  <% if bug.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bug.errors.count, "error") %> prohibited this bug from being saved:</h2>
+
+      <ul>
+      <% bug.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_field :descricao, id: :bug_descricao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :solucionado %>
+    <%= form.check_box :solucionado, id: :bug_solucionado %>
+  </div>
+
+  <div class="field">
+    <%= form.label :solucao %>
+    <%= form.text_field :solucao, id: :bug_solucao %>
+  </div>
+
+  <div class="field">
+    <%= form.label :projeto_id %>
+    <%= form.collection_select :projeto_id, Projeto.all, :id, :nome %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
